@@ -82,6 +82,7 @@ func (s *VsanTestSuite) TearDownTest(c *C) {
 
 var _ = Suite(&VsanTestSuite{})
 
+// This function is used to return a unique container name used for "vsan_test"
 func (s *VsanTestSuite) newCName() string {
 	cname := inputparams.GetUniqueContainerName("vsan_test")
 	s.containerList = append(s.containerList, cname)
