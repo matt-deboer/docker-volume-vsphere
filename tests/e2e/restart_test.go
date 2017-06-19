@@ -78,7 +78,7 @@ func (s *RestartTestData) TestVolumeDetached(c *C) {
 	c.Assert(status, Equals, true, Commentf("Volume %s is not attached", s.volumeName))
 
 	// 3. Restart docker
-	out, err = dockercli.KillDocker(s.config.DockerHosts[1])
+	out, err = dockercli.RestartDocker(s.config.DockerHosts[1])
 	c.Assert(err, IsNil, Commentf(out))
 
 	// 4. Verify detached status. Volume should be detached (within the timeout)
@@ -93,7 +93,7 @@ func (s *RestartTestData) TestVolumeDetached(c *C) {
 	c.Assert(err, IsNil, Commentf(out))
 
 	// 6. Restart the docker daemon on the other host
-	out, err = dockercli.KillDocker(s.config.DockerHosts[0])
+	out, err = dockercli.RestartDocker(s.config.DockerHosts[0])
 	c.Assert(err, IsNil, Commentf(out))
 
 	// Clean up the container on host0
