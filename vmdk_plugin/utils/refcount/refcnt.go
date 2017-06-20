@@ -87,7 +87,7 @@ import (
 )
 
 const (
-	ApiVersion              = "v1.24" // docker engine 1.12 and above support this api version
+	ApiVersion              = "v1.23" // docker engine 1.12 and above support this api version
 	DockerUSocket           = "unix:///var/run/docker.sock"
 	defaultSleepIntervalSec = 1
 	dockerConnTimeoutSec    = 2
